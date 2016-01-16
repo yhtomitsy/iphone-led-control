@@ -4,7 +4,7 @@
 
 #define dataPin 6 // data pin for the LED
 
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(3,dataPin, NEO_GRB + NEO_KHZ800); //declare led strip
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(30,dataPin, NEO_GRB + NEO_KHZ800); //declare led strip
 WiFiServer server(80); // declare wifi server (wifi shield)
 
 char ssid[] = "ledcontrol001";     // the name of your network

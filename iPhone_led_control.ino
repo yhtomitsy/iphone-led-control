@@ -7,7 +7,8 @@
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(30,dataPin, NEO_GRB + NEO_KHZ800); //declare led strip
 WiFiServer server(80); // declare wifi server (wifi shield)
 
-char ssid[] = "ledcontrol001";     // the name of your network
+char ssid[] = "yourNetwork";     //  your network SSID (name) 
+char pass[] = "12345678";    // your network password
 
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
 boolean parseData = false;        // indicates if data to be parsed is available
@@ -50,7 +51,7 @@ void setup() {
     Serial.print("Attempting to connect to SSID: ");
     Serial.println(ssid);
     // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
-    status = WiFi.begin(ssid);
+    status = WiFi.begin(ssid, pass);
 
     // wait 10 seconds for connection:
     delay(10000);

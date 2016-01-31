@@ -58,6 +58,8 @@ void setup() {
   }
   Serial.println("Done");
   server.begin();
+  // you're connected now, so print out the status:
+  printWifiStatus();
 }
 
 void loop() {
@@ -114,6 +116,24 @@ void loop() {
     }
   }
   delay(10);
+}
+
+//print wifi ssid, ip address of wifi shield and the strength of wifi network
+void printWifiStatus() {
+  // print the SSID of the network you're attached to:
+  Serial.print("SSID: ");
+  Serial.println(WiFi.SSID());
+
+  // print your WiFi shield's IP address:
+  IPAddress ip = WiFi.localIP();
+  Serial.print("IP Address: ");
+  Serial.println(ip);
+
+  // print the received signal strength:
+  long rssi = WiFi.RSSI();
+  Serial.print("signal strength (RSSI):");
+  Serial.print(rssi);
+  Serial.println(" dBm");
 }
   
 
